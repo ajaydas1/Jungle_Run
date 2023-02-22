@@ -1,0 +1,45 @@
+[gd_scene format=2]
+
+[node name="Chunk_1" type="CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 0.999999, -0.00137881, 0, 0.00137881, 0.999999, 0, 0, 0 )
+use_collision = true
+
+[node name="CSGBox" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0344703, 25 )
+width = 6.0
+height = 1.0
+depth = 50.0
+
+[node name="CSGBox2" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 3.52612, 43 )
+width = 4.0
+height = 6.0
+depth = 1.0
+
+[node name="CSGBox3" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5455, 26.0013 )
+height = 4.0
+depth = 1.0
+
+[node name="CSGBox7" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2.52068, 8.00138 )
+height = 4.0
+depth = 1.0
+
+[node name="CSGBox5" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.54274, 18 )
+width = 6.0
+depth = 1.0
+
+[node name="CSGBox6" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.54136, 7.99588 )
+width = 6.0
+depth = 1.0
+
+[node name="CSGBox4" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1.53999, 34 )
+width = 4.0
+depth = 1.0
+
+[node name="ChunkEnd" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0689405, 50 )
