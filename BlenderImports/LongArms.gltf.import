@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/Characters.glb-51a6688deb4df61eeac69ff009970457.scn"
+path="res://.import/LongArms.gltf-335497425c7a341bb63a72bbf1937a36.scn"
 
 [deps]
 
-source_file="res://BlenderImports/Characters.glb"
-dest_files=[ "res://.import/Characters.glb-51a6688deb4df61eeac69ff009970457.scn" ]
+source_file="res://BlenderImports/LongArms.gltf"
+dest_files=[ "res://.import/LongArms.gltf-335497425c7a341bb63a72bbf1937a36.scn" ]
 
 [params]
 

@@ -6,11 +6,12 @@ extends Control
 # var b = "text"
 var is_dead = false
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	
 	$Menu/Resume.grab_focus()
 	get_tree().paused = false
-
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -35,7 +36,7 @@ func toggle_pause_menu():
 
 
 func _on_MainMenu_pressed():
-	get_tree().change_scene("res://MainMenu.tscn")
+	get_tree().change_scene("res://Scenes/MainMenu.tscn")
 
 
 func _on_Quit_pressed():

@@ -18,10 +18,11 @@ var currentLane := 0
 
 var collider_height
 var mesh_height
-var roll_timer = 1
+export var roll_timer = 1
 var death_timer = 0
 
 signal player_died
+var anim: AnimationNodeStateMachinePlayback
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -30,6 +31,8 @@ func _ready():
 	collider_height = $Collider.scale.y
 	print(collider_height)
 	mesh_height = $Mesh.scale.z
+	anim = $Player/AnimationTree.get("parameters/playback")
+	anim.start("Janglu_Run")
 	 # Replace with function body.
 
 
@@ -46,18 +49,24 @@ func _physics_process(delta: float) -> void:
 	velo.y -= gravity * delta
 	#Jump
 	if _is_jumping:
+		anim.travel("Jump")
 		velo.y = sqrt (gravity * jumpForce)
 		snapVector = Vector3.ZERO
+		
 	elif _just_landed:
+		anim.travel("Run")
 		snapVector = Vector3.DOWN
 	elif _is_rolling:
+		anim.travel("Slide")
 		$Collider.set("height", collider_height/2)
 		$Mesh.scale.z = mesh_height/2
-		roll_timer = 0.5
+		roll_timer = 1
 	elif !_is_rolling and roll_timer <= 0:
+		anim.travel("Run")
 		$Collider.set("height", collider_height)
 		$Mesh.scale.z = mesh_height
-		roll_timer = 0.5
+		roll_timer = 1
+		
 		
 
 #Lane Handling

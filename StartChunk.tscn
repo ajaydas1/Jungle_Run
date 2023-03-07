@@ -1,4 +1,7 @@
-[gd_scene format=2]
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_color = Color( 0.501961, 0.913725, 0.0470588, 1 )
 
 [node name="ChunkStart" type="CSGCombiner"]
 use_collision = true
@@ -8,6 +11,7 @@ transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 2
 width = 6.0
 height = 1.0
 depth = 50.0
+material = SubResource( 1 )
 
 [node name="CSGBox2" type="CSGBox" parent="."]
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 2, 3.46545, 26 )

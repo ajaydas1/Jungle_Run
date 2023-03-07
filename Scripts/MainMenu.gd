@@ -17,7 +17,7 @@ func _ready():
 
 
 func _on_Run_pressed():
-	get_tree().change_scene("res://Imports.tscn")
+	get_tree().change_scene("res://Scenes/PlayZone.tscn")
 
 
 func _on_Quit_pressed():
