@@ -5,19 +5,24 @@ extends Control
 # var a = 2
 # var b = "text"
 
-
+signal gameStarted
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$Menu/Run.grab_focus()
+	visible = true
+	$Score.set("text", Highscore.score as String)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
-
+func _process(delta):
+	if Input.is_action_just_released("ui_accept") and get_parent().get_node("MainUI").visible == true:
+		_on_Run_pressed()
 
 func _on_Run_pressed():
-	get_tree().change_scene("res://Scenes/PlayZone.tscn")
+	visible = false
+	get_parent().get_node("OnScreenUI").visible = true
+	emit_signal("gameStarted")
 
 
 func _on_Quit_pressed():

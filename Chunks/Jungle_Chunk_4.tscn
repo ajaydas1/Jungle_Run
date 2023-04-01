@@ -1,0 +1,146 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://ChunkParts/Tree_Log.tscn" type="PackedScene" id=1]
+[ext_resource path="res://ChunkParts/Lane_2.tscn" type="PackedScene" id=2]
+[ext_resource path="res://ChunkParts/Plank.tscn" type="PackedScene" id=3]
+[ext_resource path="res://ChunkParts/Lane_1.tscn" type="PackedScene" id=4]
+[ext_resource path="res://ChunkParts/Stone.tscn" type="PackedScene" id=5]
+[ext_resource path="res://ChunkParts/Lane_3.tscn" type="PackedScene" id=6]
+[ext_resource path="res://ChunkParts/Husk.tscn" type="PackedScene" id=7]
+[ext_resource path="res://ChunkParts/SideRoad.tscn" type="PackedScene" id=8]
+
+[node name="Spatial" type="Spatial"]
+
+[node name="StaticBody6" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.5, 11 )
+
+[node name="StaticBody18" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 33 )
+
+[node name="StaticBody19" parent="." instance=ExtResource( 1 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0.5, 44 )
+
+[node name="StaticBody20" parent="." instance=ExtResource( 1 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0.5, 46 )
+
+[node name="StaticBody25" parent="." instance=ExtResource( 1 )]
+transform = Transform( -1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0.5, 53 )
+
+[node name="StaticBody36" parent="." instance=ExtResource( 1 )]
+transform = Transform( -1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0.5, 60 )
+
+[node name="StaticBody21" parent="." instance=ExtResource( 1 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0.5, 48 )
+
+[node name="StaticBody7" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.5, 17 )
+
+[node name="StaticBody" parent="." instance=ExtResource( 6 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -7.15256e-07, 0, 3 )
+
+[node name="StaticBody14" parent="." instance=ExtResource( 6 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -7.15256e-07, 0, 38 )
+
+[node name="StaticBody15" parent="." instance=ExtResource( 6 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -7.15256e-07, 0, 44 )
+
+[node name="StaticBody23" parent="." instance=ExtResource( 6 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -7.15256e-07, 0, 50 )
+
+[node name="StaticBody2" parent="." instance=ExtResource( 4 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 2, 0, 9 )
+
+[node name="StaticBody3" parent="." instance=ExtResource( 4 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 2, 0, 15 )
+
+[node name="StaticBody4" parent="." instance=ExtResource( 2 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.999999, 0, 13 )
+
+[node name="StaticBody5" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 21 )
+
+[node name="StaticBody11" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 27 )
+
+[node name="StaticBody8" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.5, 6.5 )
+
+[node name="StaticBody26" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.5, 42.5 )
+
+[node name="StaticBody37" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.5, 42.5 )
+
+[node name="StaticBody28" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 42.5 )
+
+[node name="StaticBody9" parent="." instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 12 )
+
+[node name="StaticBody27" parent="." instance=ExtResource( 5 )]
+transform = Transform( 0.998935, 0.0345547, 0.030584, -0.0336726, 0.999015, -0.0289023, -0.0315526, 0.0278416, 0.999114, 2, 0.5, 52 )
+
+[node name="StaticBody29" parent="." instance=ExtResource( 5 )]
+transform = Transform( 0.998935, 0.0345547, 0.030584, -0.0336726, 0.999015, -0.0289023, -0.0315526, 0.0278416, 0.999114, -2, 0.5, 52 )
+
+[node name="StaticBody30" parent="." instance=ExtResource( 6 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -7.15256e-07, 0, 56 )
+
+[node name="StaticBody31" parent="." instance=ExtResource( 5 )]
+transform = Transform( 0.998935, 0.0345547, 0.030584, -0.0336726, 0.999015, -0.0289023, -0.0315526, 0.0278416, 0.999114, 2, 0.5, 57 )
+
+[node name="StaticBody32" parent="." instance=ExtResource( 5 )]
+transform = Transform( 0.998935, 0.0345547, 0.030584, -0.0336726, 0.999015, -0.0289023, -0.0315526, 0.0278416, 0.999114, -2, 0.5, 59 )
+
+[node name="StaticBody33" parent="." instance=ExtResource( 6 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -7.15256e-07, 0, 62 )
+
+[node name="StaticBody34" parent="." instance=ExtResource( 5 )]
+transform = Transform( 0.998935, 0.0345547, 0.030584, -0.0336726, 0.999015, -0.0289023, -0.0315526, 0.0278416, 0.999114, 2, 0.5, 63 )
+
+[node name="StaticBody35" parent="." instance=ExtResource( 5 )]
+transform = Transform( 0.998935, 0.0345547, 0.030584, -0.0336726, 0.999015, -0.0289023, -0.0315526, 0.0278416, 0.999114, -2, 0.5, 64 )
+
+[node name="ChunkEnd" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 60 )
+
+[node name="StaticBody10" parent="." instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 19 )
+
+[node name="StaticBody12" parent="." instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, 28 )
+
+[node name="SideRoad" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 3 )
+
+[node name="StaticBody" parent="SideRoad" instance=ExtResource( 8 )]
+
+[node name="StaticBody2" parent="SideRoad" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6 )
+
+[node name="StaticBody3" parent="SideRoad" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12 )
+
+[node name="StaticBody4" parent="SideRoad" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 18 )
+
+[node name="StaticBody5" parent="SideRoad" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 24 )
+
+[node name="StaticBody6" parent="SideRoad" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 30 )
+
+[node name="StaticBody7" parent="SideRoad" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 36 )
+
+[node name="StaticBody8" parent="SideRoad" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 42 )
+
+[node name="StaticBody9" parent="SideRoad" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 48 )
+
+[node name="StaticBody10" parent="SideRoad" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 54 )
+
+[node name="StaticBody11" parent="SideRoad" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 60 )

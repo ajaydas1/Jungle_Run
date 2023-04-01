@@ -1,19 +1,37 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=24 format=2]
 
-[ext_resource path="res://Scripts/LevelGenerator.gd" type="Script" id=1]
-[ext_resource path="res://Characters/JungleBoy.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Scripts/GameManager.gd" type="Script" id=3]
+[ext_resource path="res://Scripts/GameManager.gd" type="Script" id=1]
+[ext_resource path="res://Characters/JungleBoy/Janglu.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scripts/PauseMenu.gd" type="Script" id=3]
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=4]
 [ext_resource path="res://Fonts/Phudu-Light.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://StartChunk.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/StartMenu.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Fonts/Phudu-Bold.ttf" type="DynamicFontData" id=8]
+[ext_resource path="res://Fonts/Phudu-ExtraBold.ttf" type="DynamicFontData" id=10]
+[ext_resource path="res://default_env.tres" type="Environment" id=11]
+[ext_resource path="res://Audios/Swing Time.wav" type="AudioStream" id=12]
+[ext_resource path="res://Audios/jump.wav" type="AudioStream" id=13]
+[ext_resource path="res://Audios/dodge.wav" type="AudioStream" id=14]
 
 [sub_resource type="CylinderShape" id=8]
-height = 3.0
+height = 2.8
+radius = 0.78987
+
+[sub_resource type="CylinderShape" id=13]
+height = 1.05623
+radius = 0.51119
 
 [sub_resource type="CapsuleMesh" id=6]
 
 [sub_resource type="SpatialMaterial" id=7]
 
 [sub_resource type="ProceduralSky" id=4]
+sky_top_color = Color( 0.376471, 0.756863, 0.964706, 1 )
+sky_horizon_color = Color( 0.0862745, 0.411765, 0.67451, 1 )
+ground_horizon_color = Color( 0.615686, 0.933333, 0.54902, 1 )
+ground_curve = 0.422243
+sun_color = Color( 0.517647, 0.517647, 0.517647, 1 )
 
 [sub_resource type="Environment" id=5]
 background_mode = 2
@@ -23,27 +41,52 @@ ambient_light_color = Color( 1, 1, 1, 1 )
 tonemap_mode = 1
 
 [sub_resource type="DynamicFont" id=9]
-size = 60
+size = 80
 outline_size = 2
+outline_color = Color( 1, 0.952941, 0.952941, 1 )
 font_data = ExtResource( 5 )
 
 [sub_resource type="DynamicFont" id=10]
 size = 35
-outline_size = 2
-outline_color = Color( 0, 0.6, 0.627451, 1 )
+outline_size = 5
+outline_color = Color( 0.14902, 0.14902, 0.14902, 1 )
 extra_spacing_char = 5
 font_data = ExtResource( 5 )
 
+[sub_resource type="DynamicFont" id=11]
+size = 35
+outline_size = 5
+outline_color = Color( 0, 0, 0, 1 )
+extra_spacing_char = 5
+font_data = ExtResource( 8 )
+
+[sub_resource type="DynamicFont" id=12]
+size = 100
+outline_size = 5
+outline_color = Color( 0.0196078, 0.0196078, 0.0196078, 1 )
+font_data = ExtResource( 10 )
+
 [node name="World" type="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.381132, 0 )
 script = ExtResource( 1 )
 
 [node name="Player" type="KinematicBody" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.638767, 0 )
 script = ExtResource( 4 )
+jumpHeight = 1.2
+jump_peak_time = 0.4
+jump_decend_time = 0.3
 
 [node name="Collider" type="CollisionShape" parent="Player"]
-transform = Transform( 0.75, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 1, 0 )
+transform = Transform( 0.75, 0, 0, 0, 0.4, 0, 0, 0, 0.8, 0, 0.5, 0 )
 shape = SubResource( 8 )
+
+[node name="head" type="CollisionShape" parent="Player"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.74438, 0 )
+shape = SubResource( 13 )
+
+[node name="Player" parent="Player" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0656114, 0.26297 )
 
 [node name="Mesh" type="MeshInstance" parent="Player"]
 transform = Transform( 0.664, 0, 0, 0, -3.49691e-08, -0.8, 0, 0.8, -3.49691e-08, 0, 1, 0 )
@@ -51,16 +94,25 @@ visible = false
 mesh = SubResource( 6 )
 material/0 = SubResource( 7 )
 
-[node name="Player" parent="Player" instance=ExtResource( 2 )]
+[node name="voice" type="Spatial" parent="Player"]
+
+[node name="dodge" type="AudioStreamPlayer3D" parent="Player/voice"]
+stream = ExtResource( 14 )
+
+[node name="jump" type="AudioStreamPlayer3D" parent="Player/voice"]
+stream = ExtResource( 13 )
 
 [node name="Camera" type="Camera" parent="."]
-transform = Transform( -1, 1.51808e-08, -8.60947e-08, -3.45251e-08, 0.836181, 0.548453, 8.03167e-08, 0.548453, -0.836181, 0, 9.58013, -7.05024 )
+transform = Transform( -1, -2.26267e-08, 8.44439e-08, 0, 0.965926, 0.258819, -8.74228e-08, 0.258819, -0.965926, 0, 6, -7 )
+environment = ExtResource( 11 )
+current = true
+fov = 60.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 5 )
 
 [node name="SpotLight" type="SpotLight" parent="."]
-transform = Transform( 1, 0, 0, 0, -0.402843, 0.915269, 0, -0.915269, -0.402843, 0, 14.7603, 0 )
+transform = Transform( 1, 0, 0, 0, -0.402843, 0.915269, 0, -0.915269, -0.402843, 0, 15.2066, -0.402843 )
 shadow_enabled = true
 spot_range = 31.2199
 spot_angle = 37.32
@@ -89,31 +141,41 @@ margin_bottom = 124.0
 
 [node name="Resume" type="Button" parent="PauseMenu/Menu"]
 margin_right = 337.0
-margin_bottom = 80.0
+margin_bottom = 104.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 9 )
 text = "Resume"
 flat = true
 
-[node name="MainMenu" type="Button" parent="PauseMenu/Menu"]
-margin_top = 84.0
+[node name="Home" type="Button" parent="PauseMenu/Menu"]
+margin_top = 108.0
 margin_right = 337.0
-margin_bottom = 164.0
+margin_bottom = 212.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 9 )
 text = "Home"
 flat = true
 
 [node name="Quit" type="Button" parent="PauseMenu/Menu"]
-margin_top = 168.0
+margin_top = 216.0
 margin_right = 337.0
-margin_bottom = 248.0
+margin_bottom = 320.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 9 )
 text = "Quit"
 flat = true
 
-[node name="Score" type="Label" parent="."]
+[node name="ChunkStart" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.013 )
+
+[node name="MainUI" parent="." instance=ExtResource( 7 )]
+
+[node name="OnScreenUI" type="Control" parent="."]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Score" type="Label" parent="OnScreenUI"]
 margin_left = 29.0
 margin_top = 20.0
 margin_right = 440.0
@@ -121,7 +183,60 @@ margin_bottom = 63.0
 custom_fonts/font = SubResource( 10 )
 text = "Score: 0"
 
-[connection signal="player_died" from="Player" to="PauseMenu" method="_on_Player_player_died"]
+[node name="PauseButton" type="Button" parent="OnScreenUI"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = 511.0
+margin_top = 13.0
+margin_right = 551.0
+margin_bottom = 62.0
+custom_fonts/font = SubResource( 11 )
+text = "II"
+flat = true
+icon_align = 1
+
+[node name="DeadScreen" type="Control" parent="."]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="YourScore" type="Label" parent="DeadScreen"]
+margin_left = 29.0
+margin_top = 172.0
+margin_right = 580.0
+margin_bottom = 310.0
+custom_fonts/font = SubResource( 12 )
+text = "Your Score: "
+
+[node name="Score" type="Label" parent="DeadScreen"]
+margin_left = 29.0
+margin_top = 342.0
+margin_right = 580.0
+margin_bottom = 480.0
+custom_fonts/font = SubResource( 12 )
+text = "0"
+align = 1
+
+[node name="MainMenu" type="Button" parent="DeadScreen"]
+margin_left = 132.0
+margin_top = 599.0
+margin_right = 469.0
+margin_bottom = 679.0
+custom_colors/font_color = Color( 0.847059, 1, 0, 1 )
+custom_fonts/font = SubResource( 9 )
+text = "HOME"
+flat = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 12 )
+volume_db = -16.727
+autoplay = true
+
+[connection signal="player_died" from="Player" to="." method="_on_Player_player_died"]
 [connection signal="pressed" from="PauseMenu/Menu/Resume" to="PauseMenu" method="_on_Resume_pressed"]
-[connection signal="pressed" from="PauseMenu/Menu/MainMenu" to="PauseMenu" method="_on_MainMenu_pressed"]
+[connection signal="pressed" from="PauseMenu/Menu/Home" to="PauseMenu" method="_on_MainMenu_pressed"]
 [connection signal="pressed" from="PauseMenu/Menu/Quit" to="PauseMenu" method="_on_Quit_pressed"]
+[connection signal="gameStarted" from="MainUI" to="Player" method="_on_MainUI_gameStarted"]
+[connection signal="gameStarted" from="MainUI" to="PauseMenu" method="_on_MainUI_gameStarted"]
+[connection signal="pressed" from="OnScreenUI/PauseButton" to="PauseMenu" method="_on_PauseButton_pressed"]
+[connection signal="pressed" from="DeadScreen/MainMenu" to="PauseMenu" method="_on_MainMenu_pressed"]

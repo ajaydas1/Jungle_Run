@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://LevelBuilders/1Lane.mesh" type="ArrayMesh" id=1]
+[ext_resource path="res://LevelBuilders/2Lanes.mesh" type="ArrayMesh" id=1]
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 1, 0.518748, 3.09319 )
@@ -11,4 +11,5 @@ extents = Vector3( 1, 0.518748, 3.09319 )
 shape = SubResource( 1 )
 
 [node name="1Lane" type="MeshInstance" parent="CollisionShape"]
+transform = Transform( 0.5, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 mesh = ExtResource( 1 )

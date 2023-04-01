@@ -1,0 +1,56 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://LevelBuilders/SideRoad.mesh" type="ArrayMesh" id=1]
+[ext_resource path="res://LevelBuilders/Tree.mesh" type="ArrayMesh" id=2]
+[ext_resource path="res://ChunkParts/Lane_2.tscn" type="PackedScene" id=3]
+
+[node name="StaticBody" type="Spatial"]
+
+[node name="StaticBody" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 0.5, 0, 0, 0, 1, 7.93916, -0.135712, 0 )
+
+[node name="StaticBody2" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 0.5, 0, 0, 0, 1, -7.939, -0.136, 0 )
+
+[node name="SideRoad" type="MeshInstance" parent="."]
+mesh = ExtResource( 1 )
+
+[node name="Tree" type="MeshInstance" parent="."]
+transform = Transform( 0.8, 0, 0, 0, 1, 0, 0, 0, 0.8, 4.99238, 0, 1.8411 )
+mesh = ExtResource( 2 )
+
+[node name="Tree3" type="MeshInstance" parent="."]
+transform = Transform( -0.559694, 0.100144, -0.565972, 0.113357, 0.98991, 0, 0.560261, -0.100245, -0.565399, 5.947, 0.110029, -0.457049 )
+mesh = ExtResource( 2 )
+
+[node name="Tree4" type="MeshInstance" parent="."]
+transform = Transform( 0.514134, 0, -0.612916, 0, 1, 0, 0.612916, 0, 0.514134, 4.05755, 0, -2.84712 )
+mesh = ExtResource( 2 )
+
+[node name="Tree9" type="MeshInstance" parent="."]
+transform = Transform( 0.367093, 0, -0.710804, 0, 1, 0, 0.710804, 0, 0.367093, 8.52432, 0, 1.8411 )
+mesh = ExtResource( 2 )
+
+[node name="Tree12" type="MeshInstance" parent="."]
+transform = Transform( 0.175822, 0, -0.78044, 0, 1, 0, 0.78044, 0, 0.175822, 7.58949, 0, -2.84712 )
+mesh = ExtResource( 2 )
+
+[node name="Tree13" type="MeshInstance" parent="."]
+transform = Transform( -0.612387, 0, -0.514765, 0, 1, 0, 0.514765, 0, -0.612387, -7.6, 0, 1.52196 )
+mesh = ExtResource( 2 )
+
+[node name="Tree16" type="MeshInstance" parent="."]
+transform = Transform( -0.722477, 0, -0.343551, 0, 1, 0, 0.343551, 0, -0.722477, -8.1923, 0, -2.84712 )
+mesh = ExtResource( 2 )
+
+[node name="Tree5" type="MeshInstance" parent="."]
+transform = Transform( -0.772741, 0, 0.207055, 0, 1, 0, -0.207055, 0, -0.772741, -4.37546, 0, 1.8411 )
+mesh = ExtResource( 2 )
+
+[node name="Tree7" type="MeshInstance" parent="."]
+transform = Transform( 0.463261, 0.100144, 0.64728, -0.111934, 0.98991, -0.0179068, -0.642542, -0.100245, 0.469796, -4.11932, 0.0233772, -2.01051 )
+mesh = ExtResource( 2 )
+
+[node name="Tree8" type="MeshInstance" parent="."]
+transform = Transform( -0.695472, 0, 0.395372, 0, 1, 0, -0.395372, 0, -0.695472, -6.14452, 0, -0.12755 )
+mesh = ExtResource( 2 )
