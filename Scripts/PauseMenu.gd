@@ -25,6 +25,7 @@ func _on_Resume_pressed():
 	
 func toggle_pause_menu():
 	var pause_screen = not get_tree().paused
+	$Menu/Resume.grab_focus()
 	get_tree().paused = pause_screen
 	visible = pause_screen
 

@@ -16,9 +16,11 @@ func _ready():
 #func _process(delta):
 #	pass
 func _process(delta):
-	if Input.is_action_just_released("ui_accept") and get_parent().get_node("MainUI").visible == true:
+	if Input.is_action_just_released("ui_select") and get_parent().get_node("MainUI").visible == true:
 		_on_Run_pressed()
-
+	
+	if Input.is_action_just_released("ui_cancel") and get_parent().get_node("MainUI").visible == true:
+		_on_Quit_pressed()
 func _on_Run_pressed():
 	visible = false
 	get_parent().get_node("OnScreenUI").visible = true

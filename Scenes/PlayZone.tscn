@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://Scripts/GameManager.gd" type="Script" id=1]
 [ext_resource path="res://Characters/JungleBoy/Janglu.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://StartChunk.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/StartMenu.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Fonts/Phudu-Bold.ttf" type="DynamicFontData" id=8]
+[ext_resource path="res://swipe.gd" type="Script" id=9]
 [ext_resource path="res://Fonts/Phudu-ExtraBold.ttf" type="DynamicFontData" id=10]
 [ext_resource path="res://default_env.tres" type="Environment" id=11]
 [ext_resource path="res://Audios/Swing Time.wav" type="AudioStream" id=12]
@@ -59,6 +60,8 @@ outline_size = 5
 outline_color = Color( 0, 0, 0, 1 )
 extra_spacing_char = 5
 font_data = ExtResource( 8 )
+
+[sub_resource type="RectangleShape2D" id=14]
 
 [sub_resource type="DynamicFont" id=12]
 size = 100
@@ -195,6 +198,12 @@ text = "II"
 flat = true
 icon_align = 1
 
+[node name="TouchScreenButton" type="TouchScreenButton" parent="OnScreenUI"]
+position = Vector2( 50, 150 )
+scale = Vector2( 25, 40 )
+shape = SubResource( 14 )
+script = ExtResource( 9 )
+
 [node name="DeadScreen" type="Control" parent="."]
 visible = false
 margin_right = 40.0
@@ -222,6 +231,8 @@ margin_left = 132.0
 margin_top = 599.0
 margin_right = 469.0
 margin_bottom = 679.0
+focus_next = NodePath(".")
+focus_previous = NodePath(".")
 custom_colors/font_color = Color( 0.847059, 1, 0, 1 )
 custom_fonts/font = SubResource( 9 )
 text = "HOME"

@@ -81,7 +81,7 @@ func _on_Player_player_died():
 	var deadboi = load("res://Characters/Dead.tscn").instance()
 	deadboi.scale *= 1.5
 	$Player.add_child(deadboi)
-	
+	$DeadScreen/MainMenu.grab_focus()
 	
 	#$Player/Player/Janglu_Rig/Skeleton.physical_bones_start_simulation()
 	$Player/Player.visible = false
